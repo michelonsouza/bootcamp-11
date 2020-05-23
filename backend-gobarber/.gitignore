@@ -1,0 +1,10 @@
+.vscode/
+.idea/
+node_modules/
+dist/
+build/
+tmp/
+
+.env
+.env.production
+!tmp/.gitkeep
