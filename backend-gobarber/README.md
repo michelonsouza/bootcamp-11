@@ -4,7 +4,7 @@
 
 >**RF**
 
-- [ ] O usuário deve poder recuperar sua senha informando o seu e-mail;
+- [x] O usuário deve poder recuperar sua senha informando o seu e-mail;
 - [ ] O usuário deve receber um e-mail com instruções de recuperação de senha;
 - [ ] O usuário deve poder resetar sua senha;
 
@@ -18,6 +18,7 @@
 
 - [ ] O link enviado por e-mail para resetar senha, deve expirar em 2h;
 - [ ] O usuário precisa confirmar a a nova senha ao alterar a senha antiga;
+- [ ] O link do usuário deve ter um **_token_** para a identificação do usuário;
 
 ## Atualização do perfil
 
