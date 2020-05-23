@@ -4,6 +4,7 @@ node_modules/
 dist/
 build/
 tmp/
+coverage/
 
 .env
 .env.production
