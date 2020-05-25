@@ -12,11 +12,11 @@ import routes from './routes';
 const app = express();
 
 app.use(express.json());
-app.use('/files', express.static(uploadConfig.directory));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
 app.use(globalExceptionHandler);
 
 app.listen(3333, () =>
   // eslint-disable-next-line
-  console.log('Server is running at http://localhost:3333'),
+  console.log('🚀 Server is running at http://localhost:3333'),
 );
