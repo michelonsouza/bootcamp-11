@@ -1,6 +1,6 @@
 // import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
-import ListProviderMonthAvailabilityService from './ListProviderMothAvailabilityService';
+import ListProviderMonthAvailabilityService from './ListProviderMonthAvailabilityService';
 
 // let fakeUsersRepository: FakeUsersRepository;
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
@@ -21,6 +21,7 @@ describe('ListProviderMonthAvailability', () => {
         fakeAppointmentsRepository.create({
           date: new Date(2020, 4, 28, index + 8, 0, 0),
           provider_id: 'user',
+          user_id: 'user-id',
         }),
       ),
     );
