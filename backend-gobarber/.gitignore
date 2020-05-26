@@ -9,3 +9,4 @@ coverage/
 .env
 .env.production
 !tmp/.gitkeep
+ormconfig.json
