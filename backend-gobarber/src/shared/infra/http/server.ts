@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import express from 'express';
+import { errors } from 'celebrate';
 import 'express-async-errors';
 
 import '@shared/infra/typeorm';
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
+app.use(errors());
 app.use(globalExceptionHandler);
 
 app.listen(3333, () =>
