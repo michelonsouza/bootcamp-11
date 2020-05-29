@@ -5,6 +5,7 @@ dist/
 build/
 tmp/
 coverage/
+.DS_Store
 
 .env
 .env.production

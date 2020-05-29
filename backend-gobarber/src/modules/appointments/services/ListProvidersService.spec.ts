@@ -1,13 +1,19 @@
 import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
+import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
 import ListProvidersService from './ListProvidersService';
 
 let fakeUsersRepository: FakeUsersRepository;
+let fakeCacheProvider: FakeCacheProvider;
 let listProviders: ListProvidersService;
 
 describe('ListProviders', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
-    listProviders = new ListProvidersService(fakeUsersRepository);
+    fakeCacheProvider = new FakeCacheProvider();
+    listProviders = new ListProvidersService(
+      fakeUsersRepository,
+      fakeCacheProvider,
+    );
   });
 
   it('should be able to list providers', async () => {
@@ -33,12 +39,12 @@ describe('ListProviders', () => {
       user_id: loggedUser.id,
     });
 
+    await fakeCacheProvider.recover(`providers-list:${loggedUser.id}`);
+
+    await listProviders.execute({
+      user_id: loggedUser.id,
+    });
+
     expect(providers).toEqual([user1, user2]);
   });
-
-  // it('should not be able to show the profile from non-existing user', async () => {
-  //   await expect(
-  //     showProfile.execute({ user_id: 'non-existing-user-id' }),
-  //   ).rejects.toBeInstanceOf(AppError);
-  // });
 });
