@@ -8,7 +8,6 @@ export default function globalExceptionHandler(
   response: Response,
   _: NextFunction,
 ): Response {
-  console.log(error);
   if (error instanceof AppError) {
     return response
       .status(error.satatusCode)
