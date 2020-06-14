@@ -18,16 +18,16 @@ profileRouter.put(
       email: Joi.string().email().required(),
       old_password: Joi.string(),
       password: Joi.string().when('old_password', {
-        is: Joi.string(),
+        is: (old_password: string) => !!old_password.length,
         then: Joi.required(),
       }),
       password_confirmation: Joi.string()
-        .when('password', {
-          is: Joi.string(),
+        .when('old_password', {
+          is: (old_password: string) => !!old_password.length,
           then: Joi.required().valid(Joi.ref('password')),
         })
-        .when('old_password', {
-          is: Joi.string(),
+        .when('password', {
+          is: (password: string) => !!password.length,
           then: Joi.required().valid(Joi.ref('password')),
         }),
     },

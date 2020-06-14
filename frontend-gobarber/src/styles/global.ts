@@ -30,4 +30,8 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  button, input, select, textarea, a {
+    -webkit-tap-highlight-color: transparent;
+  }
 `;

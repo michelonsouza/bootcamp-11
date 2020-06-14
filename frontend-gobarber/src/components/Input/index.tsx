@@ -16,10 +16,16 @@ import { Container, Error } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
+  containerStyle?: Record<string, unknown>;
   icon?: ComponentType<IconBaseProps>;
 }
 
-const Input: React.FC<InputProps> = ({ icon: Icon, name, ...rest }) => {
+const Input: React.FC<InputProps> = ({
+  icon: Icon,
+  name,
+  containerStyle = {},
+  ...rest
+}) => {
   const { colors } = useContext(ThemeContext);
   const [isFilled, setIsFilled] = useState(false);
   const { fieldName, defaultValue, error, registerField } = useField(name);
@@ -38,7 +44,7 @@ const Input: React.FC<InputProps> = ({ icon: Icon, name, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <Container isErrored={!!error} isFilled={isFilled}>
+    <Container style={containerStyle} isErrored={!!error} isFilled={isFilled}>
       {Icon && <Icon size={20} />}
       <input
         defaultValue={defaultValue}

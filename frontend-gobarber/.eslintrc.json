@@ -31,6 +31,7 @@
   "rules": {
     "prettier/prettier": "error",
     "import/prefer-default-export": "off",
+    "import/no-duplicates": "off",
     "camelcase": "off",
     "no-unused-expressions": "off",
     "react/jsx-props-no-spreading": "off",

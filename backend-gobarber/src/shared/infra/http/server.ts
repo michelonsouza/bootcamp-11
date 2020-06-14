@@ -18,9 +18,9 @@ const app = express();
 
 app.use(helmet());
 app.use(cors());
-app.use(rateLimiter);
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
+app.use(rateLimiter);
 app.use(routes);
 app.use(errors());
 app.use(globalExceptionHandler);

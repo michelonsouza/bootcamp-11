@@ -19,4 +19,7 @@ export const Container = styled.button`
   font-weight: 500;
   margin-top: 16px;
   transition: all 300ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

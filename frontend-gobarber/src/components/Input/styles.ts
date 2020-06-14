@@ -52,9 +52,11 @@ export const Container = styled.div<ContainerProps>`
         background: ${theme.colors.inputs} !important;
         -webkit-box-shadow: 0 0 0 30px ${theme.colors.inputs} inset !important;
         box-shadow: 0 0 0 30px ${theme.colors.inputs} inset !important;
-        -webkit-text-fill-color: ${theme.colors.text} !important;
-        color: ${theme.colors.text} !important;
+        -webkit-text-fill-color: ${theme.colors.white} !important;
+        color: ${theme.colors.white} !important;
       }
+
+      caret-color: ${theme.colors.white};
     `}
   }
 
