@@ -18,6 +18,10 @@ declare module 'styled-components' {
       success: string;
       warning: string;
     };
+    font: {
+      regular: string;
+      medium: string;
+    };
     metrics: {
       baseHeight: number;
       baseRadius: number;

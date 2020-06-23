@@ -72,6 +72,8 @@ const AuthProvider: React.FC = ({ children }) => {
       ]);
 
       if (token && user) {
+        api.defaults.headers.Authorization = `Bearer ${token}`;
+
         setData({ token, user: JSON.parse(user) });
       }
 

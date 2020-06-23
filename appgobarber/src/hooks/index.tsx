@@ -13,6 +13,7 @@ const AppProvider: React.FC = ({ children }) => (
         <StatusBar
           barStyle="light-content"
           backgroundColor={dark.colors.background}
+          translucent
         />
         {children}
       </View>

@@ -8,7 +8,7 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
-import { TextInputProps, Animated } from 'react-native';
+import { TextInputProps, Animated, StyleProp, ViewStyle } from 'react-native';
 import { ThemeContext } from 'styled-components';
 import { useField } from '@unform/core';
 
@@ -17,6 +17,7 @@ import { Container, TextInput, Icon, Error, ErrorText } from './styles';
 interface InputProps extends TextInputProps {
   name: string;
   icon: string;
+  containerStyle?: StyleProp<ViewStyle>;
 }
 
 interface inputValueReference {
@@ -28,7 +29,7 @@ interface InputRef {
 }
 
 const Input: React.RefForwardingComponent<InputRef, InputProps> = (
-  { name, icon, ...rest },
+  { name, icon, containerStyle, ...rest },
   ref,
 ) => {
   const { colors } = useContext(ThemeContext);
@@ -108,7 +109,7 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = (
   }, [error, setErrorApear]);
 
   return (
-    <Container isFocused={isFocused} isErrored={!!error}>
+    <Container style={containerStyle} isFocused={isFocused} isErrored={!!error}>
       {error && !isFocused && (
         <Error style={{ bottom: errorY, opacity: errorOpacity }}>
           <ErrorText>{error}</ErrorText>

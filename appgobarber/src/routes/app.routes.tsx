@@ -2,7 +2,12 @@ import React, { useContext } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeContext } from 'styled-components';
 
-import { Dashboard } from '../screens';
+import {
+  Dashboard,
+  CreateAppointment,
+  AppointmentCreated,
+  Profile,
+} from '../screens';
 
 const { Navigator: AppNavigator, Screen: AppScreen } = createStackNavigator();
 
@@ -17,6 +22,9 @@ const AppRoutes: React.FC = () => {
       }}
     >
       <AppScreen name="Dashboard" component={Dashboard} />
+      <AppScreen name="CreateAppointment" component={CreateAppointment} />
+      <AppScreen name="AppointmentCreated" component={AppointmentCreated} />
+      <AppScreen name="Profile" component={Profile} />
     </AppNavigator>
   );
 };

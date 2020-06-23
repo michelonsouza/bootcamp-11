@@ -1,6 +1,7 @@
 {
   "env": {
-    "es2020": true
+    "es2020": true,
+    "browser": true
   },
   "extends": [
     "plugin:react/recommended",

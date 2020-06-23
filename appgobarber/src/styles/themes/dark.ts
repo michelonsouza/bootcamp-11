@@ -15,6 +15,10 @@ export default {
     success: '#04d361',
     warning: '#ffc400',
   },
+  font: {
+    regular: 'RobotoSlab-Regular',
+    medium: 'RobotoSlab-Medium',
+  },
   metrics: {
     baseHeight: 60,
     baseRadius: 10,
