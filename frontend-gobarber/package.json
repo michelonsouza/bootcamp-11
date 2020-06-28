@@ -14,6 +14,7 @@
     "@unform/web": "^2.1.0",
     "axios": "^0.19.2",
     "date-fns": "^2.14.0",
+    "jest-styled-components": "^7.0.2",
     "polished": "^3.6.4",
     "react": "^16.13.1",
     "react-day-picker": "^7.4.8",
@@ -29,12 +30,14 @@
     "yup": "^0.29.1"
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.3.0",
     "@types/date-fns": "^2.6.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.0",
     "@types/yup": "^0.29.2",
     "@typescript-eslint/eslint-plugin": "^3.1.0",
     "@typescript-eslint/parser": "^3.1.0",
+    "axios-mock-adapter": "^1.18.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-airbnb-base": "^14.1.0",
@@ -45,16 +48,26 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "SKIP_PREFLIGHT_CHECK=true react-scripts test --no-watch false --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/pages/**/*.tsx",
+      "src/components/**/*.tsx",
+      "src/hooks/**/*.tsx",
+      "!src/hooks/index.tsx"
+    ]
   },
   "browserslist": {
     "production": [

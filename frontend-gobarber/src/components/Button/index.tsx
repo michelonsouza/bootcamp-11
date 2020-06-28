@@ -14,7 +14,13 @@ const Button: React.FC<ButtonProps> = ({ children, loading, ...rest }) => {
   return (
     <Container {...rest}>
       {loading ? (
-        <Spinner radius={34} stroke={5} color={colors.background} visible />
+        <Spinner
+          radius={34}
+          stroke={5}
+          color={colors.background}
+          data-testid="button-spinner"
+          visible
+        />
       ) : (
         children
       )}

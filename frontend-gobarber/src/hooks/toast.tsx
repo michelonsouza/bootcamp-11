@@ -17,7 +17,10 @@ interface ToastContextdata {
 
 const ToastContext = createContext<ToastContextdata>({} as ToastContextdata);
 
-const ToastProvider: React.FC = ({ children }) => {
+const ToastProvider: React.FC<{ timer?: number }> = ({
+  timer = 3000,
+  children,
+}) => {
   const [messages, setMessages] = useState<ToastMessage[]>([]);
 
   const addToast = useCallback(
@@ -45,7 +48,7 @@ const ToastProvider: React.FC = ({ children }) => {
     <ToastContext.Provider
       value={{ addToast, removeToast } as ToastContextdata}
     >
-      <ToastContainer messages={messages} timer={3000} progressBar />
+      <ToastContainer messages={messages} timer={timer} progressBar />
       {children}
     </ToastContext.Provider>
   );
@@ -53,10 +56,6 @@ const ToastProvider: React.FC = ({ children }) => {
 
 function useToast(): ToastContextdata {
   const context = useContext(ToastContext);
-
-  if (!context) {
-    throw new Error('useToast must be used within a ToastProvider');
-  }
 
   return context;
 }

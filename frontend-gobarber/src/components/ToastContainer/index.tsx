@@ -8,7 +8,7 @@ import { Container } from './styles';
 
 interface ToastContainerProps {
   messages: ToastMessage[];
-  timer?: number;
+  timer: number;
   progressBar?: boolean;
 }
 
@@ -34,7 +34,7 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
           key={key}
           style={props}
           message={message}
-          timer={timer || 3000}
+          timer={timer}
           progressBar={progressBar}
         />
       ))}

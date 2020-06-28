@@ -31,6 +31,7 @@ const Tooltip: React.FC<TooltipProps> = ({ title, className, children }) => {
       hovered={hovered}
       leave={leave}
       className={className}
+      data-testid="tooltip-test"
     >
       {children}
       <span>{title}</span>

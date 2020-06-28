@@ -44,7 +44,12 @@ const Input: React.FC<InputProps> = ({
   }, [fieldName, registerField]);
 
   return (
-    <Container style={containerStyle} isErrored={!!error} isFilled={isFilled}>
+    <Container
+      style={containerStyle}
+      isErrored={!!error}
+      isFilled={isFilled}
+      data-testid="input-container"
+    >
       {Icon && <Icon size={20} />}
       <input
         defaultValue={defaultValue}
@@ -53,7 +58,7 @@ const Input: React.FC<InputProps> = ({
         {...rest}
       />
       {error && (
-        <Error title={error}>
+        <Error title={error} data-testid="error-icon">
           <FiAlertCircle color={colors.red} size={20} />
         </Error>
       )}
