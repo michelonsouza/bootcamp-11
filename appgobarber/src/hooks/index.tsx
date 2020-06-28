@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components/native';
 import { View, StatusBar } from 'react-native';
 
 import dark from '../styles/themes/dark';

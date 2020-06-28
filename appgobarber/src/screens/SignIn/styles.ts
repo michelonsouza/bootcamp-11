@@ -11,7 +11,9 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => {
+    return theme.colors.white;
+  }};
   font-size: 24px;
   font-family: 'RobotoSlab-Medium';
   margin: 64px 0 24px;

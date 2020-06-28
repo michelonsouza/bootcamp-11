@@ -8,7 +8,7 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
